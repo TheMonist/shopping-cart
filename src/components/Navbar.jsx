@@ -25,7 +25,7 @@ const Link = styled.li`
 const Navbar = () => {
   return (
     <Body>
-      <p>SNEAKER Logo</p>
+      <img src="./assets/logo.svg" alt="sneaker logo" />
       <LinksContainer>
         <Link>Collections</Link>
         <Link>Men</Link>
