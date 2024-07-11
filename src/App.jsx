@@ -2,12 +2,14 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import FooterSection from "./components/Footer";
+import Home from "./components/Home";
 
 function App() {
   return (
     <>
-      <Navbar></Navbar>
-      <FooterSection></FooterSection>
+      <Navbar />
+      <Home />
+      <FooterSection />
     </>
   );
 }

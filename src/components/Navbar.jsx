@@ -1,12 +1,15 @@
 import styled from "styled-components";
+import img from "../assets/logo.svg";
 
-const Body = styled.div`
+const Body = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
   width: 100vw;
   margin: 0;
+  background-color: hsl(223, 64%, 98%);
+  color: hsl(220, 13%, 13%);
 `;
 
 const LinksContainer = styled.ul`
@@ -25,7 +28,7 @@ const Link = styled.li`
 const Navbar = () => {
   return (
     <Body>
-      <img src="./assets/logo.svg" alt="sneaker logo" />
+      <img src={img} alt="sneaker logo" />
       <LinksContainer>
         <Link>Collections</Link>
         <Link>Men</Link>

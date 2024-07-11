@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+
 // footer
 const Footer = styled.footer`
   display: flex;
@@ -10,9 +11,10 @@ const Footer = styled.footer`
   margin: 0;
   width: 100vw;
   padding: 1rem;
-  background-color: hsl(219, 9%, 13%);
-  color: hsl(0, 0% 100%);
+  background-color: hsl(223, 64%, 98%);
+  color: hsl(220, 13%, 13%);
 `;
+
 // footer icon
 const LinkContainer = styled.ul`
     display: flex;
