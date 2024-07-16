@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import img from "../assets/logo.svg";
+import CartWidget from "./CartWidget";
 
 const Body = styled.header`
   display: flex;
@@ -20,7 +21,7 @@ const LinksContainer = styled.ul`
   margin: 2rem;
 `;
 
-const Link = styled.li`
+const NavLink = styled.li`
   padding: 0.625rem;
   align-items: center;
 `;
@@ -30,11 +31,12 @@ const Navbar = () => {
     <Body>
       <img src={img} alt="sneaker logo" />
       <LinksContainer>
-        <Link>Collections</Link>
-        <Link>Men</Link>
-        <Link>Women</Link>
-        <Link>About</Link>
-        <Link>Contact</Link>
+        <NavLink>Collections</NavLink>
+        <NavLink>Men</NavLink>
+        <NavLink>Women</NavLink>
+        <NavLink>About</NavLink>
+        <NavLink>Contact</NavLink>
+        <CartWidget />
       </LinksContainer>
     </Body>
   );
