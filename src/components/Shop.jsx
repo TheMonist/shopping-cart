@@ -112,3 +112,5 @@ export default Shop;
     </>
   );
 }
+
+//https://www.frontendmentor.io/solutions/shopping-cart-using-react-js-and-styled-components-AAcBFAYyvs
