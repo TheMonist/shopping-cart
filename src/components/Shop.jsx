@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import productOne from "../assets/image-product-1.jpg";
+import { useContext, useRef, useEffect } from "react";
+import UseCartToggle from "./UseCartToggle";
 // import { Link } from "react-router-dom"
 
 const ShopSection = styled.section`
@@ -61,17 +63,52 @@ const ShopContent = styled.div`
   }
 `;
 
-const Shop = () => {
+const Shop = ({ id, cartItems, emptyCart }) => {
+  const show = useContext(CartContext);
+  const toggleShow = useContext(ToggleContext);
+
+  const cartRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (cartRef.current && !cartRef.current.contains(e.target)) {
+        toggleShow(false);
+      }
+    };
+    document, addEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+    };
+  }, [toggleShow]);
+
   return (
-    <ShopSection>
+    <ShopSection show={show} id={id} ref={cartRef}>
       <h6>Cart</h6>
-      <ShopContent>
-        <img src={productOne} alt="product" />
-        <p>Fall Limited Edition Sneakers</p>
-      </ShopContent>
+      <ShopContent cartItems={cartItems}></ShopContent>
       <CartButton>Add To Cart</CartButton>
     </ShopSection>
   );
 };
 
 export default Shop;
+
+{
+  cartItems > 0 ? (
+    <>
+      <ShopContent cartItems={cartItems}>
+        <img src={productOne} alt="product" />
+        <p>Fall Limited Edition Sneakers</p>
+        <p>$125.00 x {cartItems}</p>
+      </ShopContent>
+      <div>
+        <CartButton>Add To Cart</CartButton>
+      </div>
+      <ShopContent>
+        <p>Your Cart Is Empty</p>
+      </ShopContent>
+    </>
+  ) : (
+    <>
+      <p>Your Cart Is Empty</p>
+    </>
+  );
+}
